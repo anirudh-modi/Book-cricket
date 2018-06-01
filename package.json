@@ -1,0 +1,21 @@
+{
+  "name": "quizinator",
+  "version": "1.0.0",
+  "description": "Problem statement by Postman",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b ./unitTest/*.js"
+  },
+  "author": "Anirudh Modi",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mocha": "^3.1.0",
+    "should": "^11.1.0",
+    "socket.io": "^1.4.8",
+    "validator": "^6.0.0"
+  }
+}

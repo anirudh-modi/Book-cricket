@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font: 13px Helvetica, Arial;
+}
+
+.gameContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: scroll;
+}
+.paddingTopBottom10
+{
+    padding:10px 0px 0px 0px;
+}
+.gameList {
+    width: 350px;
+    height: calc(100% - 50px);
+    margin-top: 5px;
+    position: relative;
+    background: #0081E5;
+    border-radius: 2px;
+    box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.6);
+    margin-left: 5px;
+    overflow: scroll;
+    display:inline-block;
+}
+
+.gameCardInList {
+    margin-top: 5px;
+    padding: 5px 5px 10px 5px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    color: rgb(238, 238, 238);
+    position:relative;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.createGameButton {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    height: 30px;
+    padding: 0px 10px;
+    line-height: 30px;
+    border-radius: 28px;
+    top: 5px;
+    right: 5px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.22);
+    color: #f1f1f1;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.gamesListHeader {
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    background: #f1f1f1;
+    color: #9AC73F;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.watermark {
+    width: 230px;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    /* height: 100px; */
+    padding: 28px 0px;
+    margin-top: 50%;
+    margin-left: calc(50% - 115px);
+    font-size: 21px;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.registerCard {
+    width: 400px;
+    height: 235px;
+    background: #0081E5;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.55);
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.registerCardHeader {
+    height: 40px;
+    text-align: center;
+    font-size: 21px;
+    color: rgb(0, 129, 229);
+    background: rgba(0, 0, 0, 0.64);
+    line-height: 40px;
+}
+
+.registerEmail {
+    width: calc(100% - 40px);
+    height: 40px;
+    background: rgb(255, 255, 255);
+    border: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 2px;
+    color: #002e52;
+}
+
+.registerButton {
+    width: calc(100% - 40px);
+    height: 40px;
+    background: rgba(0, 0, 0, 0.37);
+    border: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 40px;
+    border-radius: 2px;
+    color: #ffffff;
+    text-align: center;
+}
+.gameSeqNo
+{
+    background: #FFEB3B;
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor:default;
+}
+
+.joinGameButton
+{
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    background: #9ac73f;
+    text-align: center;
+    box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.31);
+    line-height: 22px;
+    border-radius: 2px;
+    right: 10px;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.7);
+    cursor:pointer;
+}
+
+.statusBadge
+{
+    display: inline-block;
+    background: #15e9ff;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.59);
+    cursor:default;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+#pendingList .statusBadge
+{
+    background:#FFC107;
+}
+
+#joinedList .statusBadge
+{
+    background: #4CAF50;
+}
+
+#rejectedList .statusBadge
+{
+    background: #ff6a67;
+}
+.groupGameHeader
+{
+    background: rgba(0, 0, 0, 0.6);
+    padding: 7px 10px;
+    font-size: 14px;
+    color: rgb(241, 241, 241);
+    cursor:default;
+}
+
+.header{
+    padding: 10px 0px;
+    text-align: center;
+    background: #0081e5;
+    box-shadow: 0px 0px 10px 0px black;
+    /* position: fixed; */
+    top: 0px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 18px;
+    width: 100%;
+}
+
+.gameArea
+{
+    display: inline-block;
+    width: calc(100% - 365px);
+    height: calc(100% - 50px);
+    vertical-align: top;
+    top: 6px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.74);
+    border-radius: 2px;
+}
+
+.gameAreaHeader
+{
+    padding: 0px 10px;
+    background: #ffeb3b;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 6px 2px -2px rgba(0, 0, 0, 0.12);
+}
+
+.activityList
+{
+    height:calc(100% - 90px);
+    overflow:scroll;
+}
+.activityItem
+{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #bcbcbc;
+    color: rgba(255, 255, 255, 0.79);
+    margin:3px 0px;
+    cursor:default;
+}
+
+.readButton
+{
+    display: inline-block;
+    background: #9ac73f;
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 9px;
+    border-radius: 2px;
+    position: absolute;
+    top: 5px;
+    right: 110px;
+    cursor:pointer;
+}
+
+
+.quitButton
+{
+    display: inline-block;
+    background: rgb(244, 67, 54);
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 9px;
+    color: #ffeb3b;
+    border-radius: 2px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.gameStarted
+{
+    background-color:#00bab1;
+}
+
+.out
+{
+    background: #f44336;
+}
+
+.endOfInnings
+{
+    background: #0081e5;
+}
+
+.getNumberButton
+{
+    width: 150px;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    color: white;
+    border-radius: 2px;
+    background: #0081e5;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+.endOfOver
+{
+    background: #455A64;
+}
+.runs
+{
+    background: #919191;
+}
+
+
+.hasWonTheMAtch
+{
+    background: #9ac73f;
+}
+
+.batsman
+{
+    top: 2px;
+    position: relative;
+    left: 10px;
+}
+.nextBall
+{
+    vertical-align: top;
+    display: inline-block;
+    height: 30px;
+    color: black;
+    font-weight: 600;
+}

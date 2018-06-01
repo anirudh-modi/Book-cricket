@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Book Cricket</title>
+    <link rel="stylesheet" type="text/css" href="./client/css/main.css">
+</head>
+
+<body>
+    <div class='gameContainer' id='gameContainer'>
+        <div class='registerCard'>
+            <div class='registerCardHeader'>Welcome to Book Cricket</div>
+            <div>
+                <input class='registerEmail' type='text' placeholder='Write a username..' data-bind="value:username,valueUpdate:'input'">
+                <input class='registerEmail' type='text' placeholder='Enter your email-id' data-bind="value:emailId,valueUpdate:'input'">
+                <div class='registerButton' data-bind='click:createConnectionToServer'>Register</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./client/lib/jquery.js"></script>
+<script src='./client/lib/ko.js'></script>
+<script src='./client/lib/validator.js'></script>
+<script src='./client/model/Game.js'></script>
+<script src='./client/viewmodel/registrationViewModel.js'></script>
+<script src='./client/viewmodel/gameListViewModel.js'></script>
+<script src='./client/viewmodel/gameAreaViewModel.js'></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src='./client/model/socketHandler.js'></script>
+
+</html>

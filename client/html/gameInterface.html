@@ -1,0 +1,66 @@
+<div class="header">Hi! Welcome</div>
+<div id='gameList' class='gameList'>
+    <div class='gamesListHeader'>
+        <span> Available games</span>
+        <span class='createGameButton' data-bind='text:createNewGameText,click:createNewGame' id='createGame'></span>
+    </div>
+    <div data-bind='if:!gamesList().length'>
+        <span class='watermark' data-bind='text:emptyGamesList'></span>
+    </div>
+    <div id='activeGames'>
+        <div>
+            <div class="groupGameHeader">Pending Games</div>
+            <div data-bind="foreach:gamesList">
+                <!-- ko if: $data.pendingUsers().indexOf(window.emailId)>=0-->
+                <div id='pendingList'data-bind="template:{name:'gameCardTemplate'}"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+        <div>
+            <div class="groupGameHeader">Available Games</div>
+            <div data-bind="foreach:gamesList">
+                <!-- ko if: !$data.statusOfGameRequest()-->
+                <div id='availableList'data-bind="template:{name:'gameCardTemplate'}"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+        <div>
+            <div class="groupGameHeader">Joined Games</div>
+            <div data-bind="foreach:gamesList">
+                <!-- ko if: $data.users().indexOf(window.emailId)>=0-->
+                <div id='joinedList'data-bind="template:{name:'gameCardTemplate'}"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+        <div>
+            <div class="groupGameHeader">Rejected Games</div>
+            <div data-bind="foreach:gamesList">
+                <!-- ko if: $data.rejectedUsers().indexOf(window.emailId)>=0-->
+                <div id='rejectedList'data-bind="template:{name:'gameCardTemplate'}"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+<div id='gameArea' class="gameArea">
+</div>
+<div id='userList'>
+</div>
+
+<script id="gameCardTemplate" type="text/html">
+    <!-- ko if:!$data.gameOver() -->
+        <div class='gameCardInList' data-bind='with:$data,click:$root.openGame'>
+            <span class='gameSeqNo'data-bind="text:'Game no : #'+seqNo()">
+            </span>
+                <span data-bind="if:(!isSelfCreated() && canJoinGame())">
+                    <span class='joinGameButton'data-bind='clickBubble:false,click:requestToJoinGame'>Join</span>
+                </span>
+                <span data-bind='if:statusOfGameRequest'>
+                    <span class='statusBadge' data-bind='text:statusOfGameRequest'>
+                    </span>
+                </span>
+            <div class='paddingTopBottom10 ' data-bind='text:"A new game is created by : "+createdByText()'>
+            </div>
+        </div>
+    <!-- /ko -->
+</script>

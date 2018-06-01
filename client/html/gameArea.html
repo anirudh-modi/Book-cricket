@@ -1,0 +1,22 @@
+<div class='gameAreaHeader'>
+    <span data-bind="text:'Game no : #'+game.seqNo()"></span>
+    <!-- ko if:game.showReadyToPlayButton -->
+    <div class='readButton' data-bind="click:readyToPlay">Ready to play</div>
+    <!-- /ko -->
+    <!-- ko if:game.showStartGame -->
+    <div class='readButton' data-bind="click:startGame">Start game</div>
+    <!-- /ko -->
+    <!-- ko if:!game.gameOver()-->
+    <div class='quitButton' data-bind="click:quitGame">Quit game</div>
+    <!-- /ko -->
+</div>
+<div class='activityList'data-bind="foreach:game.activitiesList">
+    <div class='activityItem' data-bind="text:$data.text(),css:$data.css"></div>
+</div>
+
+<div data-bind="if:(game.gameHasStarted() && game.userPlaying()===window.emailId && !game.gameOver())">
+    <div class='getNumberButton'data-bind="click:getNumber">
+        <span class="nextBall">Play next ball</span>
+        <img class='batsman'src="/client/image/cricketer.png" width="30" height="30">
+    </div>
+</div>
